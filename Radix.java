@@ -4,6 +4,10 @@ public class Radix {
     System.out.println(nth(-123, 1));
     System.out.println(nth(123, 2));
     System.out.println(nth(-123, 2));
+    System.out.println(length(0));
+    System.out.println(length(15));
+    System.out.println(length(-10));
+    System.out.println(length(5112));
   }
 
   public static int nth(int n, int col) {
@@ -11,7 +15,11 @@ public class Radix {
     return Math.abs(x);
   }
 
-  //public static int length(int n) { }
+  public static int length(int n) {
+    String x = String.valueOf(n);
+    if (x.charAt(0) == '-') return x.length() - 1;
+    return x.length();
+  }
 
   //public static void merge(MyLinkedList original,MyLinkedList[]buckets) { }
 }
