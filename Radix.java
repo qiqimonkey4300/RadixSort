@@ -1,15 +1,4 @@
 public class Radix {
-  public static void main(String[] args) {
-    System.out.println(nth(123, 1));
-    System.out.println(nth(-123, 1));
-    System.out.println(nth(123, 2));
-    System.out.println(nth(-123, 2));
-    System.out.println(length(0));
-    System.out.println(length(15));
-    System.out.println(length(-10));
-    System.out.println(length(5112));
-  }
-
   public static int nth(int n, int col) {
     int x = (int)(n / Math.pow(10, col)) % 10;
     return Math.abs(x);
@@ -21,5 +10,9 @@ public class Radix {
     return x.length();
   }
 
-  //public static void merge(MyLinkedList original,MyLinkedList[]buckets) { }
+  public static void merge(SortableLinkedList original, SortableLinkedList[] buckets) {
+    for (int i = 0; i < buckets.length; i++) {
+      original.extend(buckets[i]);
+    }
+  }
 }
