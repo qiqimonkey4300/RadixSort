@@ -1,13 +1,11 @@
 public class Radix {
   public static int nth(int n, int col) {
-    int x = (int)(n / Math.pow(10, col)) % 10;
-    return Math.abs(x);
+    return (int)(n / Math.pow(10, col)) % 10;
   }
 
   public static int length(int n) {
-    String x = String.valueOf(n);
-    if (x.charAt(0) == '-') return x.length() - 1;
-    return x.length();
+    if (n == 0) return 1;
+    else return (int)(Math.log10(Math.abs(n))+1);
   }
 
   public static void merge(SortableLinkedList original, SortableLinkedList[] buckets) {
