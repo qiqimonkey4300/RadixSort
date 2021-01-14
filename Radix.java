@@ -25,7 +25,7 @@ public class Radix {
         int x = data.remove(0);
         int digit = nth(x, i);
         buckets[digit].add(x);
-        if (length(x) > lsd) lsd = length(x);
+        if (i == 0 && length(x) > lsd) lsd = length(x);
       }
       merge(data, buckets);
     }
@@ -45,7 +45,7 @@ public class Radix {
         int digit = nth(x, i);
         if (x < 0) negativeBuckets[9 - Math.abs(digit)].add(x);
         else positiveBuckets[digit].add(x);
-        if (length(x) > lsd) lsd = length(x);
+        if (i == 0 && length(x) > lsd) lsd = length(x);
       }
       merge(data, negativeBuckets);
       merge(data, positiveBuckets);
